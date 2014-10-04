@@ -1,0 +1,35 @@
+Source: libbsapi
+Section: non-free/libs
+Priority: extra
+Maintainer: BlankOn Developers <blankon-dev@googlegroups.com>
+XSBC-Original-Maintainer: David Jurenka <debian.box@imx.jurenka.cz>
+Build-Depends: debhelper (>= 9), cdbs
+Standards-Version: 3.9.4.0
+Homepage: https://developers.authentec.com/
+
+Package: libbsapi
+Architecture: i386 amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: SDK for most of UPEK fingerprint readers, shared libraries
+ The Biometric Services API (BSAPI) is a mid-level SDK for application
+ developers, allowing them to use UPEK fingerprint readers from their
+ applications. The set of provided functions includes biometry (e.g. swiping
+ fingers, matching finger templates etc.), navigation (i.e. using the
+ fingerprint reader as a pointing device in similar way as touchpad) and
+ other functions (e.g. controling LEDs on the fingerprint reader).
+ .
+ This package provides shared libraries.
+
+Package: libbsapi-dev
+Section: non-free/libdevel
+Architecture: i386 amd64
+Depends: ${misc:Depends}, libbsapi (= ${binary:Version})
+Description: SDK for most of UPEK fingerprint readers, development headers
+ The Biometric Services API (BSAPI) is a mid-level SDK for application
+ developers, allowing them to use UPEK fingerprint readers from their
+ applications. The set of provided functions includes biometry (e.g. swiping
+ fingers, matching finger templates etc.), navigation (i.e. using the
+ fingerprint reader as a pointing device in similar way as touchpad) and
+ other functions (e.g. controling LEDs on the fingerprint reader).
+ .
+ This package provides development headers.

@@ -1,0 +1,11 @@
+libbsapi (4.3~rc1+build4.3.291+dfsg2-0blankon1) tambora; urgency=low
+
+  * Upload to tambora
+
+ -- Rahman Yusri Aftian <aftian@di.blankon.in>  Sat, 04 Oct 2014 12:19:33 +0000
+
+libbsapi (4.3~rc1+build4.3.291+dfsg2-0ppa1) unstable; urgency=low
+
+  * Initial release
+
+ -- David Jurenka <debian.box@imx.jurenka.cz>  Mon, 05 Aug 2013 16:29:50 +0200

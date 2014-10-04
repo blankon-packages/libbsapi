@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_INSTALL_CHANGELOGS_ALL := relnotes.txt
+DEB_FIXPERMS_EXCLUDE       := var/upek_data
+
+ARCH=$(shell uname -a | grep -q x86_64 && echo yes)
+ifeq ($(ARCH),)
+  LIBSRCDIR := lib
+else
+  LIBSRCDIR := lib64
+endif
+
+install/libbsapi::
+	install -d debian/tmp/usr/include
+	install -m 0644 include/* debian/tmp/usr/include
+	install -d debian/tmp/usr/lib
+	install -m 0644 $(LIBSRCDIR)/* debian/tmp/usr/lib
+	install -d debian/tmp/etc
+	echo 'nvmprefix="/var/upek_data/.NVM"' > debian/tmp/etc/upek.cfg
+	install -d debian/tmp/var/upek_data
+	chown root:plugdev debian/tmp/var/upek_data
+	chmod 0775 debian/tmp/var/upek_data

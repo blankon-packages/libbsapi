@@ -1,0 +1,18 @@
+# The copyright is non-standard.
+libbsapi binary: copyright-without-copyright-notice
+# This directory is required.
+libbsapi binary: non-standard-dir-in-var var/upek_data/
+# The directory needs to be writeable by anybody who has write access
+# to fingerprint readers (group plugdev).
+libbsapi binary: non-standard-dir-perm var/upek_data/ 0775 != 0755
+# The precompiled binaries are missing SONAME.
+libbsapi binary: sharedobject-in-library-directory-missing-soname usr/lib/libbsapi.so
+libbsapi binary: sharedobject-in-library-directory-missing-soname usr/lib/libbsapi.so.4.0
+# ldconfig is not called automatically because SONAME is missing.
+libbsapi binary: postinst-has-useless-call-to-ldconfig
+libbsapi binary: postrm-has-useless-call-to-ldconfig
+# No hardening
+libbsapi binary: hardening-no-relro usr/lib/libbsapi.so
+libbsapi binary: hardening-no-relro usr/lib/libbsapi.so.4.0
+libbsapi binary: hardening-no-fortify-functions usr/lib/libbsapi.so
+libbsapi binary: hardening-no-fortify-functions usr/lib/libbsapi.so.4.0

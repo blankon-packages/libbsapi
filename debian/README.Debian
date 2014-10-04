@@ -1,0 +1,7 @@
+libbsapi for Debian
+-------------------
+
+Due to the restrictive EULA, all the contents of the original tarball have
+been removed except for the binary libraries, header files and the changelog.
+
+ -- David Jurenka <debian.box@imx.jurenka.cz>  Sat, 10 Jul 2010 18:31:31 +0200

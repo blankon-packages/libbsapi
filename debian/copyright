@@ -1,0 +1,11 @@
+This package was debianized by David Jurenka <debian.box@imx.jurenka.cz> on
+Sat, 10 Jul 2010 18:31:31 +0200.
+
+It was downloaded from https://developers.authentec.com/
+
+This package serves as a plugin for the fingerprint-gui packages. In accordance
+with the End-User License Agreement for UPEK, Inc., SDK Software Products,
+this package is distributed in conjunction with and as a part of the
+fingeprint-gui packages, a copyrighted software application product that
+adds significant and primary functionality to the libbsapi shared libraries.
+Copyright and license for fingerprint-gui apply.

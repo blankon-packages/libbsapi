@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+# dh_makeshlibs omits the call to ldconfig (probably because the shared
+# libraries do not have SONAME), so let's do it manually.
+if [ "$1" = "configure" ]; then
+	ldconfig
+fi
+
+if command -v udevadm >/dev/null; then
+	for ID in 2015 2016; do
+		udevadm trigger --subsystem-match=usb --attr-match=idVendor=0483 --attr-match=idProduct=$ID
+	done
+	for ID in 2015 2016 2020 1000 1001 1002 1003 3000 3001 5002 5003; do
+		udevadm trigger --subsystem-match=usb --attr-match=idVendor=147e --attr-match=idProduct=$ID
+	done
+fi
+
+exit 0

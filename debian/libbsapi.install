@@ -1,0 +1,3 @@
+usr/lib/*
+etc/upek.cfg
+var/upek_data

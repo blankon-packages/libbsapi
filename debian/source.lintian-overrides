@@ -1,0 +1,2 @@
+# Prebuilt binaries are the main content of the source package.
+libbsapi source: source-contains-prebuilt-binary
